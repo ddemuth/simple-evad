@@ -64,33 +64,4 @@
 				</div><!--/.nav-collapse -->
 			</div>
     	</nav>
-
-
-		<!-- <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
-			<div class="container">
-				<div class="navbar-header">
-					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
-				        <span class="sr-only">Toggle navigation</span>
-				        <span class="icon-bar"></span>
-				        <span class="icon-bar"></span>
-				        <span class="icon-bar"></span>
-				      </button>
-					<a href="<?php bloginfo('url'); ?>" title="Evad Design" class="logo-link">
-						<img class="logo" src="<?php echo $uploads['baseurl']; ?>/evaddesign-logo.png" alt="<?php bloginfo('name'); ?>"/>
-					</a>	
-				</div>	
-				<div class="collapse navbar-collapse" id="navbar" role="navigation">      
-			      	<?php  
-			      	wp_nav_menu( array(
-					  'menu' => 'Main Navigation',
-					  'depth' => 2,
-					  'menu_class' => 'menu nav navbar-nav',
-					  //Process nav menu using our custom nav walker
-					  'walker' => new wp_bootstrap_navwalker())
-					);?>
-				</div> 
-			</div>
-		</nav>
- -->
-
 	</header>
