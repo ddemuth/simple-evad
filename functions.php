@@ -13,7 +13,7 @@ add_theme_support( 'post-thumbnails' );
 /**
 * Enqueue scripts and styles
 */
-function evad_scripts() {
+function hire_scripts() {
 	// load bootstrap css
 	wp_enqueue_style( 'evad-bootstrapcss', get_stylesheet_directory_uri() . '/css/bootstrap.min.css' );
 
@@ -29,7 +29,7 @@ function evad_scripts() {
 	//Load TypeKit
 	wp_enqueue_script( 'fka_typekit', '//use.typekit.net/xrr5fxy.js', array(), null, false);
 }
-add_action( 'wp_enqueue_scripts', 'evad_scripts' );
+add_action( 'wp_enqueue_scripts', 'hire_scripts' );
 
 function fka_typekit_inline() {
   if ( wp_script_is( 'fka_typekit', 'done' ) ) { ?>
@@ -37,17 +37,9 @@ function fka_typekit_inline() {
 <?php }
 }
 add_action( 'wp_footer', 'fka_typekit_inline' );
-/**
- * Registers widget areas.
- *
- * @since Simple Evad 1.0
- *
- * @return void
- */
 
 
-
-function evad_widgets() {
+function hire_widgets() {
  
  	register_sidebar( array(
 		'name'          => __( 'Blog SideBar', 'twentythirteen' ),
@@ -61,7 +53,7 @@ function evad_widgets() {
  	
 
 }
-add_action( 'widgets_init', 'evad_widgets' );
+add_action( 'widgets_init', 'hire_widgets' );
 
 
 
@@ -150,13 +142,13 @@ function my_login_logo() { ?>
 add_action( 'login_enqueue_scripts', 'my_login_logo' );
 
 function my_login_logo_url() {
-	$evaddesign_url = "http://www.evaddesign.com";
+	$evaddesign_url = "http://www.higherhire.com";
     return $evaddesign_url;
 }
 add_filter( 'login_headerurl', 'my_login_logo_url' );
 
 function my_login_logo_url_title() {
-    return 'Created with Evad Design';
+    return 'Higher Hire';
 }
 add_filter( 'login_headertitle', 'my_login_logo_url_title' );
 
