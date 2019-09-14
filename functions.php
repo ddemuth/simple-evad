@@ -21,7 +21,7 @@ function evad_scripts() {
 	wp_enqueue_style( 'evad-bootstrapcss', get_stylesheet_directory_uri() . '/css/bootstrap.min.css' );
 
 	// load Mainstyles
-	wp_enqueue_style( 'style', get_stylesheet_uri() );
+	wp_enqueue_style( 'style', get_stylesheet_uri(), false, '1.0' );
 
 	// load bootstrap js
 	wp_enqueue_script('evad-bootstrapjs', get_stylesheet_directory_uri().'/js/bootstrap.min.js', array('jquery'), false, true );
@@ -40,86 +40,6 @@ function fka_typekit_inline() {
 <?php }
 }
 add_action( 'wp_footer', 'fka_typekit_inline' );
-/**
- * Registers widget areas.
- *
- * @since Simple Evad 1.0
- *
- * @return void
- */
-
-
-
-
-if ( ! function_exists( 'twentythirteen_post_nav' ) ) :
-/**
- * Displays navigation to next/previous post when applicable.
-*
-* @since Twenty Thirteen 1.0
-*
-* @return void
-*/
-function twentythirteen_post_nav() {
-	global $post;
-
-	// Don't print empty markup if there's nowhere to navigate.
-	$previous = ( is_attachment() ) ? get_post( $post->post_parent ) : get_adjacent_post( false, '', true );
-	$next     = get_adjacent_post( false, '', false );
-
-	if ( ! $next && ! $previous )
-		return;
-	?>
-	<nav class="navigation post-navigation" role="navigation">
-		<h1 class="screen-reader-text"><?php _e( 'Post navigation', 'twentythirteen' ); ?></h1>
-		<div class="nav-links">
-
-			<?php previous_post_link( '%link', _x( '<span class="meta-nav">&larr;</span> %title', 'Previous post link', 'twentythirteen' ) ); ?>
-			<?php next_post_link( '%link', _x( '%title <span class="meta-nav">&rarr;</span>', 'Next post link', 'twentythirteen' ) ); ?>
-
-		</div><!-- .nav-links -->
-	</nav><!-- .navigation -->
-<?php } 
-endif;
-
-if ( ! function_exists( 'twentythirteen_entry_meta' ) ) :
-/**
- * Prints HTML with meta information for current post: categories, tags, permalink, author, and date.
- *
- * Create your own twentythirteen_entry_meta() to override in a child theme.
- *
- * @since Twenty Thirteen 1.0
- *
- * @return void
- */
-function twentythirteen_entry_meta() {
-	if ( is_sticky() && is_home() && ! is_paged() )
-		echo '<span class="featured-post">' . __( 'Sticky', 'twentythirteen' ) . '</span>';
-
-	if ( ! has_post_format( 'link' ) && 'post' == get_post_type() )
-		twentythirteen_entry_date();
-
-	// Translators: used between list items, there is a space after the comma.
-	$categories_list = get_the_category_list( __( ', ', 'twentythirteen' ) );
-	if ( $categories_list ) {
-		echo '<span class="categories-links">' . $categories_list . '</span>';
-	}
-
-	// Translators: used between list items, there is a space after the comma.
-	$tag_list = get_the_tag_list( '', __( ', ', 'twentythirteen' ) );
-  /*if ( $tag_list ) {
-		echo '<span class="tags-links">' . $tag_list . '</span>';
-		}*/
-
-	// Post author
-	if ( 'post' == get_post_type() ) {
-		printf( '<span class="author vcard"><a class="url fn n" href="%1$s" title="%2$s" rel="author">%3$s</a></span>',
-			esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ),
-			esc_attr( sprintf( __( 'View all posts by %s', 'twentythirteen' ), get_the_author() ) ),
-			get_the_author()
-		);
-	}
-}
-endif;
 
 //Login Page Customization
 function my_login_logo() { ?>
