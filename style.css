@@ -225,7 +225,6 @@ input[type=submit]:focus {
 .header-wrap {
 	color: #F2F2F2;
 	position: relative;
-	padding-top: 70px;
 }
 
 header a.navbar-brand {
