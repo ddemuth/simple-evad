@@ -10,6 +10,9 @@
 
 add_theme_support( 'title-tag' );
 add_theme_support( 'post-thumbnails' ); 
+
+//Add Image Sizes
+//add_image_size( 'post-main-image', 1200, 370, array( 'center', 'center' ) );
 /**
 * Enqueue scripts and styles
 */
@@ -44,24 +47,6 @@ add_action( 'wp_footer', 'fka_typekit_inline' );
  *
  * @return void
  */
-
-
-
-function evad_widgets() {
- 
- 	register_sidebar( array(
-		'name'          => __( 'Blog SideBar', 'twentythirteen' ),
-		'id'            => 'sidebar-3',
-		'description'   => __( 'Blog Sidebar', 'twentythirteen' ),
-		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
-		'after_widget'  => '</aside>',
-		'before_title'  => '<h3 class="widget-title">',
-		'after_title'   => '</h3>',
-	) );
- 	
-
-}
-add_action( 'widgets_init', 'evad_widgets' );
 
 
 
