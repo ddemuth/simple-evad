@@ -2,7 +2,7 @@
 Theme Name: Simple-Evad
 Theme URI: 
 Description: A basic, bare-bones theme that utilizes bootstrap framework and is easy to customize for designers.
-Version: 3.4
+Version: 3.5
 Author: Evad Design
 Author URI: http://www.evaddesign.com
 Tags: simple, clean, customize, basic
@@ -163,7 +163,7 @@ button {
 
 input[type=text],
 textarea {
-	border: 1px solid #C0C0C0; 
+	border: 1px solid #E3E6E9; 
 	padding: 7px; 
 	font-size: .95em; 
 	-moz-border-radius: 5px; 
@@ -178,21 +178,13 @@ textarea:focus {
 
 input[type=submit] {
 	padding: 4px 10px; 
-	color: #666666; 
-	font-weight: bold; 
-	border: 1px solid #c7d1db; 
-	border-radius: 5px; -webkit-transition: border-color .2s ease-in, background-color .2s ease-in; 
-	-moz-border-radius: 12px; 
-	-webkit-border-radius: 10px; 
+	color: #FFFFFF; 
+	font-weight: bold;
+	border: none;
+	border-radius: 5px; 
+	transition: border-color .35s ease-in-out;
 	cursor: pointer;
-	background: #deefff; /* Old browsers */
-	background: -moz-linear-gradient(top, #deefff 0%, #a8c5dd 100%); /* FF3.6+ */
-	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#deefff), color-stop(100%,#a8c5dd)); /* Chrome,Safari4+ */
-	background: -webkit-linear-gradient(top, #deefff 0%,#a8c5dd 100%); /* Chrome10+,Safari5.1+ */
-	background: -o-linear-gradient(top, #deefff 0%,#a8c5dd 100%); /* Opera 11.10+ */
-	background: -ms-linear-gradient(top, #deefff 0%,#a8c5dd 100%); /* IE10+ */
-	background: linear-gradient(top, #deefff 0%,#a8c5dd 100%); /* W3C */
-	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#deefff', endColorstr='#a8c5dd',GradientType=0 ); /* IE6-9 */
+	background: #00A4CB;
 }
 
 input[type=submit]:hover,
